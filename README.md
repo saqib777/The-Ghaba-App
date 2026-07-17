@@ -1,8 +1,6 @@
 # ghaba - Project Documentation (v2)
 ### A local-first field journal for plants, animals, birds, fishes, and insects
 
-*This replaces the earlier documentation draft. Everything below reflects the app as it exists right now, including the full edit flow, sound, multi-provider image search, scientific names, habitat, fur/skin, category checking, and the fifth realm (Insects).*
-
 ---
 
 ## 0.0 What is Ghaba App?
