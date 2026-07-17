@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<title>ghaba</title>
+<link rel="stylesheet" href="styles.css" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,500&family=Lora:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+<!-- ============ LANDING ============ -->
+<section id="view-landing" class="view view-landing active">
+  <svg class="jungle-bg" viewBox="0 0 1440 920" preserveAspectRatio="xMidYMax slice" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+      <linearGradient id="sky" x1="0" y1="0" x2="0.3" y2="1">
+        <stop offset="0%" stop-color="#0a170f"/>
+        <stop offset="30%" stop-color="#123321"/>
+        <stop offset="60%" stop-color="#1b4530"/>
+        <stop offset="85%" stop-color="#12301f"/>
+        <stop offset="100%" stop-color="#0a170f"/>
+      </linearGradient>
+      <linearGradient id="glow" x1="0" y1="0" x2="0" y2="1">
+        <stop offset="0%" stop-color="#c9a35c" stop-opacity="0.3"/>
+        <stop offset="100%" stop-color="#c9a35c" stop-opacity="0"/>
+      </linearGradient>
+    </defs>
+    <rect width="1440" height="920" fill="url(#sky)"/>
+    <ellipse cx="720" cy="120" rx="620" ry="260" fill="url(#glow)"/>
+    <g class="tree-layer tree-far" fill="#123722">
+      <path d="M0 620 Q40 520 90 620 Q120 540 160 620 Q200 500 250 620 Q290 560 330 620 Q380 500 430 620 Q470 550 520 620 Q560 480 610 620 Q650 560 700 620 Q740 500 790 620 Q830 550 880 620 Q920 490 970 620 Q1010 560 1060 620 Q1100 500 1150 620 Q1190 550 1240 620 Q1280 500 1330 620 Q1380 560 1440 620 L1440 920 L0 920 Z"/>
+    </g>
+    <g class="tree-layer tree-mid" fill="#183f27">
+      <path d="M0 700 Q60 560 120 700 Q170 600 220 700 Q280 540 340 700 Q390 610 440 700 Q500 550 560 700 Q610 610 660 700 Q720 540 780 700 Q830 600 880 700 Q940 550 1000 700 Q1050 610 1100 700 Q1160 540 1220 700 Q1270 600 1320 700 Q1380 550 1440 700 L1440 920 L0 920 Z"/>
+    </g>
+    <g class="tree-layer tree-near" fill="#0f2a1a">
+      <path d="M0 800 Q80 600 160 800 Q220 660 280 800 Q360 580 440 800 Q500 660 560 800 Q640 590 720 800 Q780 660 840 800 Q920 580 1000 800 Q1060 660 1120 800 Q1200 590 1280 800 Q1340 660 1440 800 L1440 920 L0 920 Z"/>
+    </g>
+    <g class="fireflies">
+      <circle class="firefly f1" cx="240" cy="420" r="2.6"/>
+      <circle class="firefly f2" cx="1180" cy="360" r="2.2"/>
+      <circle class="firefly f3" cx="640" cy="300" r="2.4"/>
+      <circle class="firefly f4" cx="980" cy="520" r="2"/>
+      <circle class="firefly f5" cx="380" cy="560" r="2.4"/>
+      <circle class="firefly f6" cx="1080" cy="620" r="2.1"/>
+    </g>
+    <g class="bird bird-1"><path d="M0 6 Q-14 -8 -28 4 Q-12 4 0 6 Q12 4 28 4 Q14 -8 0 6 Z" fill="#0a130d"/></g>
+    <g class="bird bird-2"><path d="M0 6 Q-14 -8 -28 4 Q-12 4 0 6 Q12 4 28 4 Q14 -8 0 6 Z" fill="#0a130d"/></g>
+    <g class="bird bird-3"><path d="M0 6 Q-14 -8 -28 4 Q-12 4 0 6 Q12 4 28 4 Q14 -8 0 6 Z" fill="#0a130d"/></g>
+  </svg>
+
+  <div class="landing-content">
+    <p class="landing-eyebrow">غَابَة &nbsp;·&nbsp; the forest</p>
+    <h1 class="landing-title">ghaba</h1>
+    <p class="landing-sub">a field journal of everything living</p>
+    <button id="btn-enter" class="btn-enter tactical-frame"><span>enter</span></button>
+  </div>
+</section>
+
+<!-- ============ CATEGORIES ============ -->
+<section id="view-categories" class="view view-categories">
+  <header class="app-header">
+    <button class="icon-btn" id="btn-home" title="Home">⌂</button>
+    <h2 class="header-title">choose a realm</h2>
+    <div class="search-wrap">
+      <input id="search-input" class="search-input" type="text" placeholder="Search every record..." autocomplete="off" />
+      <div id="search-results" class="search-results"></div>
+    </div>
+    <button class="icon-btn" id="btn-settings" title="Settings">⚙</button>
+  </header>
+
+  <div class="categories-grid">
+    <button class="category-card tactical-frame" data-category="plants">
+      <svg viewBox="0 0 64 64" class="cat-icon"><path d="M32 58V30" stroke="currentColor" stroke-width="2.4" fill="none" stroke-linecap="round"/><path d="M32 30C32 30 12 30 12 12C30 12 32 30 32 30Z" fill="currentColor" opacity="0.85"/><path d="M32 40C32 40 52 40 52 22C34 22 32 40 32 40Z" fill="currentColor" opacity="0.6"/></svg>
+      <span class="cat-name">Plants</span>
+      <span class="cat-count" data-count="plants">0 records</span>
+    </button>
+    <button class="category-card tactical-frame" data-category="animals">
+      <svg viewBox="0 0 64 64" class="cat-icon"><circle cx="32" cy="38" r="14" fill="currentColor" opacity="0.85"/><circle cx="16" cy="18" r="7" fill="currentColor" opacity="0.6"/><circle cx="48" cy="18" r="7" fill="currentColor" opacity="0.6"/><circle cx="10" cy="34" r="5" fill="currentColor" opacity="0.5"/><circle cx="54" cy="34" r="5" fill="currentColor" opacity="0.5"/></svg>
+      <span class="cat-name">Animals</span>
+      <span class="cat-count" data-count="animals">0 records</span>
+    </button>
+    <button class="category-card tactical-frame" data-category="birds">
+      <svg viewBox="0 0 64 64" class="cat-icon"><path d="M32 32C20 14 4 16 4 16C4 16 10 30 24 34C12 36 6 46 6 46C6 46 24 50 32 32Z" fill="currentColor" opacity="0.85"/><path d="M32 32C44 14 60 16 60 16C60 16 54 30 40 34C52 36 58 46 58 46C58 46 40 50 32 32Z" fill="currentColor" opacity="0.6"/></svg>
+      <span class="cat-name">Birds</span>
+      <span class="cat-count" data-count="birds">0 records</span>
+    </button>
+    <button class="category-card tactical-frame" data-category="fishes">
+      <svg viewBox="0 0 64 64" class="cat-icon"><path d="M8 32C8 32 22 16 40 32C22 48 8 32 8 32Z" fill="currentColor" opacity="0.85"/><path d="M40 32L56 20V44Z" fill="currentColor" opacity="0.6"/><circle cx="18" cy="28" r="1.6" fill="#0d1f14"/></svg>
+      <span class="cat-name">Fishes</span>
+      <span class="cat-count" data-count="fishes">0 records</span>
+    </button>
+    <button class="category-card tactical-frame" data-category="insects">
+      <svg viewBox="0 0 64 64" class="cat-icon">
+        <ellipse cx="32" cy="32" rx="3" ry="10" fill="currentColor" opacity="0.9"/>
+        <path d="M30 26C30 26 14 12 8 18C4 24 22 32 30 30Z" fill="currentColor" opacity="0.7"/>
+        <path d="M34 26C34 26 50 12 56 18C60 24 42 32 34 30Z" fill="currentColor" opacity="0.7"/>
+        <path d="M30 38C30 38 14 52 8 46C4 40 22 32 30 34Z" fill="currentColor" opacity="0.55"/>
+        <path d="M34 38C34 38 50 52 56 46C60 40 42 32 34 34Z" fill="currentColor" opacity="0.55"/>
+        <path d="M31 20L27 12M33 20L37 12" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" fill="none"/>
+      </svg>
+      <span class="cat-name">Insects</span>
+      <span class="cat-count" data-count="insects">0 records</span>
+    </button>
+  </div>
+</section>
+
+<!-- ============ SPECIES LIST (index page for a realm) ============ -->
+<section id="view-list" class="view view-list">
+  <header class="app-header">
+    <button class="icon-btn" id="btn-back-cat" title="Back to realms">←</button>
+    <h2 class="header-title" id="list-category-label">plants</h2>
+    <div class="search-wrap">
+      <input id="search-input-list" class="search-input" type="text" placeholder="Search every record..." autocomplete="off" />
+      <div id="search-results-list" class="search-results"></div>
+    </div>
+    <button class="icon-btn" id="btn-list-add" title="Add a new record">＋</button>
+  </header>
+
+  <div id="list-empty" class="species-empty">
+    <p class="empty-glyph">✦</p>
+    <p class="empty-title">This realm has no records yet</p>
+    <p class="empty-sub">Begin the collection with your first entry.</p>
+    <button id="btn-empty-add" class="btn-secondary tactical-frame">Add first entry</button>
+  </div>
+
+  <div id="list-grid" class="list-grid"></div>
+</section>
+
+<!-- ============ SPECIES ============ -->
+<section id="view-species" class="view view-species">
+  <header class="app-header">
+    <button class="icon-btn" id="btn-back-list" title="Back to list">←</button>
+    <h2 class="header-title" id="species-category-label">plants</h2>
+    <div class="species-nav">
+      <button class="icon-btn" id="btn-prev">‹</button>
+      <span id="species-position" class="species-position">0 / 0</span>
+      <button class="icon-btn" id="btn-next">›</button>
+      <button class="icon-btn" id="btn-add-new" title="Add a new record">＋</button>
+      <button class="icon-btn" id="btn-edit-record" title="Edit this record">✎</button>
+      <button class="icon-btn icon-btn-danger" id="btn-delete" title="Delete this record">🗑</button>
+    </div>
+    <div class="search-wrap">
+      <input id="search-input-2" class="search-input" type="text" placeholder="Search every record..." autocomplete="off" />
+      <div id="search-results-2" class="search-results"></div>
+    </div>
+  </header>
+
+  <article id="species-card" class="species-card">
+    <div class="grid-row grid-row-top">
+      <div class="hero-image-wrap tactical-frame">
+        <img id="s-main-img" class="hero-image" alt="" />
+      </div>
+      <div class="hero-info">
+        <h3 id="s-name" class="hero-name"></h3>
+        <p id="s-scientific" class="hero-scientific"></p>
+        <p id="s-description" class="hero-desc"></p>
+        <ul id="s-facts" class="hero-facts"></ul>
+        <button id="s-sound-btn" class="sound-btn tactical-frame" style="display:none;">
+          <span class="sound-btn-icon">🔊</span><span>Play call</span>
+        </button>
+      </div>
+    </div>
+
+    <div class="grid-row grid-row-mid">
+      <div class="detail-stack">
+        <div class="detail-row tactical-frame" id="row-eye">
+          <img id="s-eye-img" class="detail-thumb" alt="" />
+          <div class="detail-copy">
+            <p class="detail-label">Eye</p>
+            <p id="s-eye-caption" class="detail-caption"></p>
+          </div>
+        </div>
+        <div class="detail-row tactical-frame" id="row-face">
+          <img id="s-face-img" class="detail-thumb" alt="" />
+          <div class="detail-copy">
+            <p class="detail-label">Face</p>
+            <p id="s-face-caption" class="detail-caption"></p>
+          </div>
+        </div>
+        <div class="detail-row tactical-frame" id="row-feet">
+          <img id="s-feet-img" class="detail-thumb" alt="" />
+          <div class="detail-copy">
+            <p class="detail-label">Feet</p>
+            <p id="s-feet-caption" class="detail-caption"></p>
+          </div>
+        </div>
+        <div class="detail-row tactical-frame" id="row-fur">
+          <img id="s-fur-img" class="detail-thumb" alt="" />
+          <div class="detail-copy">
+            <p class="detail-label">Fur / Skin</p>
+            <p id="s-fur-caption" class="detail-caption"></p>
+          </div>
+        </div>
+        <div class="detail-row tactical-frame" id="row-footprint">
+          <img id="s-footprint-img" class="detail-thumb" alt="" />
+          <div class="detail-copy">
+            <p class="detail-label">Footprint</p>
+            <p id="s-footprint-caption" class="detail-caption"></p>
+          </div>
+        </div>
+        <div class="detail-row tactical-frame" id="row-habitat">
+          <img id="s-habitat-img" class="detail-thumb" alt="" />
+          <div class="detail-copy">
+            <p class="detail-label">Habitat</p>
+            <p id="s-habitat-caption" class="detail-caption"></p>
+          </div>
+        </div>
+      </div>
+      <div class="secondary-image-wrap tactical-frame">
+        <img id="s-secondary-img" class="secondary-image" alt="" />
+      </div>
+    </div>
+
+    <div class="grid-row grid-row-bottom" id="s-bottom-row"></div>
+  </article>
+</section>
+
+<!-- ============ ADD / EDIT FORM (shared) ============ -->
+<section id="view-add" class="view view-add">
+  <header class="app-header">
+    <button class="icon-btn" id="btn-cancel-add" title="Cancel">←</button>
+    <h2 class="header-title" id="form-heading">new record</h2>
+    <div></div>
+  </header>
+
+  <form id="add-form" class="add-form">
+    <div class="form-section">
+      <p class="section-heading">Identity</p>
+      <label class="field-label">Realm</label>
+      <select id="f-category" class="field-input field-select">
+        <option value="plants">Plants</option>
+        <option value="animals">Animals</option>
+        <option value="birds">Birds</option>
+        <option value="fishes">Fishes</option>
+        <option value="insects">Insects</option>
+      </select>
+
+      <label class="field-label">Name</label>
+      <div class="name-row">
+        <input id="f-name" class="field-input" type="text" placeholder="e.g. Malabar Giant Squirrel" required />
+        <button type="button" id="btn-ai-fill" class="btn-ai tactical-frame">✦ Auto-fill with AI</button>
+      </div>
+
+      <label class="field-label">Scientific name</label>
+      <div class="name-row">
+        <input id="f-scientific" class="field-input" type="text" placeholder="e.g. Ratufa indica" />
+        <button type="button" class="btn-caption-ai" data-sci-name="1" title="Auto-fill with AI">✦</button>
+      </div>
+
+      <p id="ai-status" class="ai-status"></p>
+      <div id="category-warning" class="category-warning" style="display:none;">
+        <p id="category-warning-text"></p>
+        <div class="category-warning-actions">
+          <button type="button" id="btn-use-suggested" class="btn-tiny"></button>
+          <button type="button" id="btn-save-anyway" class="btn-tiny">Save anyway</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="form-section">
+      <p class="section-heading">Description &amp; facts</p>
+      <label class="field-label">Description</label>
+      <textarea id="f-description" class="field-textarea" rows="4" placeholder="A short profile - habitat, behaviour, why it matters..."></textarea>
+
+      <label class="field-label">Quick facts</label>
+      <div id="f-facts-list" class="facts-list"></div>
+      <button type="button" id="f-add-fact" class="btn-tiny">+ add fact</button>
+    </div>
+
+    <div class="form-section">
+      <p class="section-heading">Habitat</p>
+      <label class="field-label">Where it's typically found</label>
+      <div class="name-row">
+        <input class="field-input caption-input" data-caption="habitat" type="text" placeholder="e.g. Dense forest canopy, den, riverbank, stable..." />
+        <button type="button" class="btn-caption-ai" data-caption-field="habitat" title="Auto-fill with AI">✦</button>
+      </div>
+      <button type="button" class="img-picker" data-target="habitat" data-query-hint="habitat environment">Add habitat photo</button>
+      <div class="img-preview-wrap">
+        <img class="img-preview" data-preview="habitat" />
+        <button type="button" class="img-remove" data-remove="habitat" title="Remove photo">×</button>
+      </div>
+    </div>
+
+    <div class="form-section form-images">
+      <div class="image-field" data-field="main">
+        <label class="field-label">Main photo</label>
+        <button type="button" class="img-picker" data-target="main" data-query-hint="">Add photo</button>
+        <div class="img-preview-wrap">
+          <img class="img-preview" data-preview="main" />
+          <button type="button" class="img-remove" data-remove="main" title="Remove photo">×</button>
+        </div>
+      </div>
+      <div class="image-field" data-field="secondary">
+        <label class="field-label">Secondary photo</label>
+        <button type="button" class="img-picker" data-target="secondary" data-query-hint="">Add photo</button>
+        <div class="img-preview-wrap">
+          <img class="img-preview" data-preview="secondary" />
+          <button type="button" class="img-remove" data-remove="secondary" title="Remove photo">×</button>
+        </div>
+      </div>
+
+      <div class="image-field" data-field="eye">
+        <label class="field-label">Eye close-up</label>
+        <button type="button" class="img-picker" data-target="eye" data-query-hint="eye close up">Add photo</button>
+        <div class="img-preview-wrap">
+          <img class="img-preview" data-preview="eye" />
+          <button type="button" class="img-remove" data-remove="eye" title="Remove photo">×</button>
+        </div>
+        <div class="caption-row">
+          <input class="field-input caption-input" data-caption="eye" type="text" placeholder="Caption - monocular/binocular vision, features..." />
+          <button type="button" class="btn-caption-ai" data-caption-field="eye" title="Auto-fill caption with AI">✦</button>
+        </div>
+      </div>
+      <div class="image-field" data-field="face">
+        <label class="field-label">Face</label>
+        <button type="button" class="img-picker" data-target="face" data-query-hint="face">Add photo</button>
+        <div class="img-preview-wrap">
+          <img class="img-preview" data-preview="face" />
+          <button type="button" class="img-remove" data-remove="face" title="Remove photo">×</button>
+        </div>
+        <div class="caption-row">
+          <input class="field-input caption-input" data-caption="face" type="text" placeholder="Caption - face shape, markings..." />
+          <button type="button" class="btn-caption-ai" data-caption-field="face" title="Auto-fill caption with AI">✦</button>
+        </div>
+      </div>
+
+      <div class="image-field" data-field="feet">
+        <label class="field-label">Hooves / feet</label>
+        <button type="button" class="img-picker" data-target="feet" data-query-hint="feet paws">Add photo</button>
+        <div class="img-preview-wrap">
+          <img class="img-preview" data-preview="feet" />
+          <button type="button" class="img-remove" data-remove="feet" title="Remove photo">×</button>
+        </div>
+        <div class="caption-row">
+          <input class="field-input caption-input" data-caption="feet" type="text" placeholder="Caption - cloven hooves, padded paws, webbed..." />
+          <button type="button" class="btn-caption-ai" data-caption-field="feet" title="Auto-fill caption with AI">✦</button>
+        </div>
+      </div>
+      <div class="image-field" data-field="fur">
+        <label class="field-label">Fur / skin</label>
+        <button type="button" class="img-picker" data-target="fur" data-query-hint="fur skin texture close up">Add photo</button>
+        <div class="img-preview-wrap">
+          <img class="img-preview" data-preview="fur" />
+          <button type="button" class="img-remove" data-remove="fur" title="Remove photo">×</button>
+        </div>
+        <div class="caption-row">
+          <input class="field-input caption-input" data-caption="fur" type="text" placeholder="Caption - texture, pattern, coat type..." />
+          <button type="button" class="btn-caption-ai" data-caption-field="fur" title="Auto-fill caption with AI">✦</button>
+        </div>
+      </div>
+
+      <div class="image-field" data-field="footprint">
+        <label class="field-label">Footprint</label>
+        <button type="button" class="img-picker" data-target="footprint" data-query-hint="footprint track">Add photo</button>
+        <div class="img-preview-wrap">
+          <img class="img-preview" data-preview="footprint" />
+          <button type="button" class="img-remove" data-remove="footprint" title="Remove photo">×</button>
+        </div>
+        <div class="caption-row">
+          <input class="field-input caption-input" data-caption="footprint" type="text" placeholder="Caption - track shape, size, gait..." />
+          <button type="button" class="btn-caption-ai" data-caption-field="footprint" title="Auto-fill caption with AI">✦</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="form-section">
+      <p class="section-heading">Sound</p>
+      <button type="button" id="btn-sound-add" class="sound-picker-btn">Add sound</button>
+      <div id="sound-preview-wrap" class="sound-preview-wrap" style="display:none;">
+        <span id="sound-preview-name" class="sound-preview-name"></span>
+        <button type="button" id="btn-sound-remove" class="img-remove sound-remove" title="Remove sound">×</button>
+      </div>
+    </div>
+
+    <div class="form-section">
+      <p class="section-heading">Related species</p>
+      <div id="f-related-list" class="related-list"></div>
+      <button type="button" id="f-add-related" class="btn-tiny">+ add related species</button>
+    </div>
+
+    <div class="form-actions">
+      <button type="button" id="btn-add-cancel-2" class="btn-secondary">Cancel</button>
+      <button type="submit" class="btn-primary tactical-frame">Save record</button>
+    </div>
+  </form>
+</section>
+
+<!-- ============ SETTINGS MODAL ============ -->
+<div id="settings-overlay" class="modal-overlay">
+  <div class="modal-panel tactical-frame">
+    <h3 class="modal-title">Settings</h3>
+
+    <label class="field-label">Groq API key</label>
+    <input id="f-groq-key" class="field-input" type="password" placeholder="gsk_..." autocomplete="off" />
+    <p class="modal-note">Powers every "Auto-fill with AI" button. Get a free key at console.groq.com.</p>
+
+    <label class="field-label">Picture search source</label>
+    <select id="f-image-provider" class="field-input field-select">
+      <option value="pexels">Pexels</option>
+      <option value="unsplash">Unsplash</option>
+      <option value="pixabay">Pixabay</option>
+    </select>
+
+    <label class="field-label">Pexels API key</label>
+    <input id="f-pexels-key" class="field-input" type="password" placeholder="..." autocomplete="off" />
+    <label class="field-label">Unsplash access key</label>
+    <input id="f-unsplash-key" class="field-input" type="password" placeholder="..." autocomplete="off" />
+    <label class="field-label">Pixabay API key</label>
+    <input id="f-pixabay-key" class="field-input" type="password" placeholder="..." autocomplete="off" />
+    <p class="modal-note">Only the key for your selected source above is used. Get free keys at pexels.com/api, unsplash.com/developers, or pixabay.com/api/docs.</p>
+
+    <label class="field-label">Freesound API key</label>
+    <input id="f-freesound-key" class="field-input" type="password" placeholder="..." autocomplete="off" />
+    <p class="modal-note">Powers the "Add sound" search. Get a free key at freesound.org/apiv2/apply. All keys are saved locally on this machine, next to your journal data - never sent anywhere but their own service.</p>
+
+    <div class="modal-actions">
+      <button type="button" id="btn-settings-cancel" class="btn-secondary">Cancel</button>
+      <button type="button" id="btn-settings-save" class="btn-primary tactical-frame">Save</button>
+    </div>
+  </div>
+</div>
+
+<!-- ============ IMAGE SEARCH / ADD PHOTO MODAL ============ -->
+<div id="image-search-overlay" class="modal-overlay">
+  <div class="modal-panel image-search-panel tactical-frame">
+    <h3 class="modal-title">Add a photo</h3>
+    <div class="image-search-row">
+      <input id="img-search-query" class="field-input" type="text" placeholder="Search for a photo..." autocomplete="off" />
+      <button type="button" id="btn-img-search-go" class="btn-secondary">Search</button>
+    </div>
+    <p id="img-search-status" class="ai-status"></p>
+    <div id="img-search-results" class="image-search-grid"></div>
+    <div class="modal-actions image-search-actions">
+      <button type="button" id="btn-img-search-upload" class="btn-secondary">Upload from computer instead</button>
+      <button type="button" id="btn-img-search-cancel" class="btn-secondary">Cancel</button>
+    </div>
+  </div>
+</div>
+
+<!-- ============ SOUND SEARCH / ADD SOUND MODAL ============ -->
+<div id="sound-search-overlay" class="modal-overlay">
+  <div class="modal-panel image-search-panel tactical-frame">
+    <h3 class="modal-title">Add a sound</h3>
+    <div class="image-search-row">
+      <input id="snd-search-query" class="field-input" type="text" placeholder="Search for a sound (e.g. tiger roar)..." autocomplete="off" />
+      <button type="button" id="btn-snd-search-go" class="btn-secondary">Search</button>
+    </div>
+    <p id="snd-search-status" class="ai-status"></p>
+    <div id="snd-search-results" class="sound-search-list"></div>
+    <div class="modal-actions image-search-actions">
+      <button type="button" id="btn-snd-search-upload" class="btn-secondary">Upload from computer instead</button>
+      <button type="button" id="btn-snd-search-cancel" class="btn-secondary">Cancel</button>
+    </div>
+  </div>
+</div>
+
+<script src="app.js"></script>
+</body>
+</html>
